@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Sprinter Web 3D</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Import Map for Three.js and Addons -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Game Container -->
+    <div id="game-container"></div>
+
+    <!-- UI: Loading Screen -->
+    <div id="loading-screen">
+        <h1>URBAN SPRINTER</h1>
+        <div class="loader-container">
+            <div id="loader-bar"></div>
+        </div>
+        <p id="loading-text">Loading Assets...</p>
+    </div>
+
+    <!-- UI: HUD -->
+    <div id="hud" class="hidden">
+        <div class="score-box">
+            <span class="label">DIST</span>
+            <span id="score-val">0</span>m
+        </div>
+        <div class="coin-box">
+            <span class="label">COINS</span>
+            <span id="coin-val">0</span>
+        </div>
+    </div>
+
+    <!-- UI: Game Over -->
+    <div id="game-over-screen" class="hidden">
+        <h2>CRASHED!</h2>
+        <p>Distance: <span id="final-score">0</span>m</p>
+        <button id="restart-btn">RUN AGAIN</button>
+    </div>
+
+    <!-- Controls Hint -->
+    <div id="controls-hint" class="hidden">Use Arrow Keys / WASD to Move & Jump</div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
