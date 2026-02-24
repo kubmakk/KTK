@@ -53,9 +53,9 @@
 Часть 4: Создание промпта для AI
 Вот готовые структурированные запросы, которые можно скормить в Claude, GPT-4 или любую другую мощную модель.
 4.2 Docstring Prompt
-Этот формат отлично подойдет, если ты генерируешь логику, например, на Python или Swift.
-"""
-Project Overview:
+Этот формат отлично подойдет, например, на Python.
+
+> Project Overview:
 A 3D infinite runner game mechanics engine (similar to Subway Surfers).
 
 Main Mechanics:
