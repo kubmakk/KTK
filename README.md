@@ -191,4 +191,3 @@ Provide the complete codebase divided into logical files (index.html, style.css,
  * Implement the AssetManager loading logic properly.
  * Implement the THREE.AnimationMixer logic for seamless transitions between 'Run', 'Jump', and 'Roll'.
  * Ensure accurate Box3 intersection logic for collision detection between the player model and obstacle models.
-С этим промптом нейросеть выдаст профессиональный каркас, где уже прописана логика загрузчика (GLTFLoader), миксера анимаций и расчета хитбоксов по геометрии загруженных моделек. Тебе останется только скачать любые бесплатные .glb модели (подойдут готовые паки с Mixamo или Kenney), положить их в папку /assets/models/ и переименовать согласно таблице в промпте.
