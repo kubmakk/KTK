@@ -1,0 +1,14 @@
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/bin/Debug/net10.0/пр10
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/bin/Debug/net10.0/пр10.deps.json
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/bin/Debug/net10.0/пр10.runtimeconfig.json
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/bin/Debug/net10.0/пр10.dll
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/bin/Debug/net10.0/пр10.pdb
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/obj/Debug/net10.0/пр10.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/obj/Debug/net10.0/пр10.AssemblyInfoInputs.cache
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/obj/Debug/net10.0/пр10.AssemblyInfo.cs
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/obj/Debug/net10.0/пр10.csproj.CoreCompileInputs.cache
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/obj/Debug/net10.0/пр10.dll
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/obj/Debug/net10.0/refint/пр10.dll
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/obj/Debug/net10.0/пр10.pdb
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/obj/Debug/net10.0/пр10.genruntimeconfig.cache
+/Users/kubmakkk/Desktop/Dev/KTK/2 курс/c#/чибисова/пр10/obj/Debug/net10.0/ref/пр10.dll
