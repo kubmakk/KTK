@@ -1,0 +1,115 @@
+
+
+
+create table client (
+id int auto_increment primary key,
+phone varchar(45),
+balance decimal(10,2),
+reg_date datetime,
+login varchar(45),
+clientcol varchar(45),
+
+CreatedAt DATETIME,
+CreatedBy VARCHAR(50),
+UpdatedAt DATETIME,
+UpdatedBy VARCHAR(50),
+IsActive BOOLEAN default TRUE
+);
+
+create table employee (
+id int auto_increment primary key,
+position varchar(45),
+rights varchar(45),
+login varchar(45),
+full_name varchar(255),
+full_lastname varchar(255),
+full_patronymic varchar(45),
+CreatedAt DATETIME,
+CreatedBy VARCHAR(50),
+UpdatedAt DATETIME,
+UpdatedBy VARCHAR(50),
+IsActive BOOLEAN default TRUE
+);
+
+create table pc (
+id int auto_increment primary key,
+number int,
+status varchar(45),
+zone varchar(45),
+configure text,
+CreatedAt DATETIME,
+CreatedBy VARCHAR(50),
+UpdatedAt DATETIME,
+UpdatedBy VARCHAR(50),
+IsActive BOOLEAN default TRUE
+);
+
+create table service (
+id int auto_increment primary key,
+name varchar(255),
+price decimal(10,2),
+type varchar(45),
+CreatedAt DATETIME,
+CreatedBy VARCHAR(50),
+UpdatedAt DATETIME,
+UpdatedBy VARCHAR(50),
+IsActive BOOLEAN default TRUE
+);
+
+create table sessie (
+id int auto_increment primary key,
+start_time datetime,
+end_time datetime,
+cost decimal(10,2),
+client_id int,
+pc_id int,
+employee_id int,
+foreign key (client_id) references client(id),
+foreign key (pc_id) references pc(id),
+foreign key (employee_id) references employee(id),
+CreatedAt DATETIME,
+CreatedBy VARCHAR(50),
+UpdatedAt DATETIME,
+UpdatedBy VARCHAR(50),
+IsActive BOOLEAN default TRUE
+);
+
+create table purshes (
+id int auto_increment primary key,
+description varchar(255),
+service_id int,
+client_id int,
+employee_id int,
+foreign key (service_id) references service(id),
+foreign key (client_id) references client(id),
+foreign key (employee_id) references employee(id),
+CreatedAt DATETIME,
+CreatedBy VARCHAR(50),
+UpdatedAt DATETIME,
+UpdatedBy VARCHAR(50),
+IsActive BOOLEAN default TRUE
+);
+
+insert into client(phone, balance, reg_date, login, clientcol, createdat, createdby, isactive) 
+values ('89001234567', 500.00, '11-02-2025', 'kubmakk', 'note', '10-02-2026', 'admin_alex', true);
+
+insert into employee(position, rights, login, full_name, full_lastname, full_patronymic, createdat, createdby)
+values ('administrator', 'full', 'admin_alex', 'алексей', 'смирнов', 'иванович', '1-12-2024', 'director');
+
+insert into pc (number, status, zone, configure, createdat, createdby)
+values (10, 'free', 'vip', 'rtx 4090, 32gb ram', '10-02-2023', 'admin');
+
+insert into service(name, price, type, createdat, createdby)
+values ('night tariff', 1000.00, 'gaming', '10-02-2023', 'admin');
+
+insert into sessie(start_time, cost, client_id, pc_id, employee_id, createdat, createdby)
+values ('10.02.2026', 250.50, 1, 1, 1, '10-02-2026', 'admin_alex');
+
+insert into purshes(description, service_id, client_id, employee_id, createdat, createdby)
+values ('extra energy drink', 1, 1, 1, '10-02-2026', 'admin_alex');
+
+
+
+
+
+
