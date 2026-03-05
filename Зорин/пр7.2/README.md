@@ -124,8 +124,8 @@ Use THREE.GLTFLoader to load these exact URLs directly in your JavaScript code. 
 | Entity | Direct URL | Animation Instructions |
 |---|---|---|
 | Player | https://raw.githubusercontent.com/mrdoob/three.js/master/examples/models/gltf/Soldier.glb | Use Run for normal state. Map Walk for the roll/jump states if specific animations are missing. |
-| Train/Obstacle | https://raw.githubusercontent.com/mrdoob/three.js/master/examples/models/gltf/BoxVertexColors.glb | Scale it horizontally (e.g., scale.set(3, 3, 10)) to resemble a train car. |
-| Coin | https://raw.githubusercontent.com/mrdoob/three.js/master/examples/models/gltf/BoomBox.glb | Scale it down significantly (scale.set(10, 10, 10)) and rotate it continuously, OR fallback to a procedural golden CylinderGeometry. |
+| Train/Obstacle | https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/BoxTextured/glTF-Binary/BoxTextured.glb | Scale it horizontally (e.g., scale.set(3, 3, 10)) to resemble a train car. |
+| Coin | https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/BoomBox/glTF-Binary/BoomBox.glb | Scale it down significantly (scale.set(10, 10, 10)) and rotate it continuously, OR fallback to a procedural golden CylinderGeometry. |
 
 0.2 Critical Fallback System
 The LLM MUST implement a fallback logic in the AssetManager.
