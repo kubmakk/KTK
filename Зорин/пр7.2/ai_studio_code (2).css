@@ -1,0 +1,139 @@
+:root {
+    --primary-color: #ffcc00;
+    --ui-bg: rgba(0, 0, 0, 0.7);
+    --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000;
+    font-family: var(--font-stack);
+    user-select: none;
+}
+
+#game-container {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* UI Overlay Layer */
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Let clicks pass through to canvas usually */
+}
+
+/* Helper Classes */
+.hidden {
+    display: none !important;
+}
+
+/* Loading Screen */
+#loading-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+.loader-container {
+    width: 300px;
+    height: 10px;
+    background: #333;
+    margin: 20px 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#loader-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.2s;
+}
+
+/* HUD */
+#hud {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.score-box, .coin-box {
+    background: var(--ui-bg);
+    padding: 10px 20px;
+    border-radius: 8px;
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.label {
+    font-size: 14px;
+    color: #aaa;
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* Game Over Screen */
+#game-over-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px); /* CSS Blur Filter */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+#game-over-screen h2 {
+    font-size: 64px;
+    margin: 0 0 20px 0;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #000;
+}
+
+#restart-btn {
+    padding: 15px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.1s;
+}
+
+#restart-btn:hover {
+    transform: scale(1.05);
+    background: #fff;
+}
