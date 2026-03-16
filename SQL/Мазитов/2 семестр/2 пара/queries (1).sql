@@ -1,3 +1,6 @@
+create database cat;
+use cat;
+
 create table client (
 id int auto_increment primary key,
 phone varchar(45),
