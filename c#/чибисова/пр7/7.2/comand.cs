@@ -1,3 +1,4 @@
+//7.2
 using System;
 
 namespace PracticalWork7_2
