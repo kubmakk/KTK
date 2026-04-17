@@ -5,7 +5,7 @@ interface IGreet
 {
     void SayHello();
 }
-class Person : IGreet
+class Person: IGreet
 {
     public void SayHello() => Console.WriteLine("Привет!");
 }
@@ -15,13 +15,13 @@ interface IAnimal
 {
     void Speak();
 }
-class Dog : IAnimal
+class Dog: IAnimal
 {
-    public void Speak() => Console.WriteLine("Гав");
+    public void Speak() => Console.WriteLine("Мяу(гав)");
 }
-class Cat : IAnimal
+class Cat: IAnimal
 {
-    public void Speak() => Console.WriteLine("Мяу");
+    public void Speak() => Console.WriteLine("Гав(мяу)");
 }
 //Задание 3
 interface IProduct
@@ -29,24 +29,24 @@ interface IProduct
     string Name { get; set; }
     decimal Price { get; set; }
 }
-class Book : IProduct
+class Book: IProduct
 {
     public string Name { get; set; }
     public decimal Price { get; set; }
 }
 //Задание 6
-interface IShape { double GetArea(); }
-class Circle : IShape
+interface IShape { 
+    double GetArea(); 
+}
+class Circle(double radius): IShape
 {
     public double Radius { get; set; }
-    public Circle(double radius) => Radius = radius;
     public double GetArea() => Math.PI * Radius * Radius;
 }
-class Rectangle : IShape
+class Rectangle(double width, double height): IShape
 {
     public double Width { get; set; }
     public double Height { get; set; }
-    public Rectangle(double width, double height) { Width = width; Height = height; }
     public double GetArea() => Width * Height;
 }
 
@@ -54,11 +54,11 @@ interface IWorker
 {
     void DoWork();
 }
-class Teacher : IWorker
+class Teacher: IWorker
 {
     public void DoWork() => Console.WriteLine("Учитель ведет урок.");
 }
-class Programmer : IWorker
+class Programmer: IWorker
 {
     public void DoWork() => Console.WriteLine("Программист пишет код.");
 }
@@ -71,7 +71,7 @@ interface ISwim
 {
     void Swim();
 }
-class Duck : IFly, ISwim
+class Duck: IFly, ISwim
 {
     public void Fly() => Console.WriteLine("Утка летит в небе.");
     public void Swim() => Console.WriteLine("Утка плывет по озеру.");
@@ -81,11 +81,11 @@ interface IPrintable
 {
     void Print();
 }
-class Document : IPrintable
+class Document: IPrintable
 {
     public void Print() => Console.WriteLine("Печать текстового документа...");
 }
-class Photo : IPrintable
+class Photo: IPrintable
 {
     public void Print() => Console.WriteLine("Печать цветной фотографии...");
 }
@@ -105,42 +105,42 @@ class Program
         IGreet person = new Person();
         person.SayHello();
 
-        Console.WriteLine("\n--- Задания 2 и 4 ---");
+        //Задание 2 и 4
         IAnimal[] animals = { new Dog(), new Cat() };
         foreach (var animal in animals)
         {
             animal.Speak();
         }
 
-        Console.WriteLine("\n--- Задание 3 ---");
-        IProduct myBook = new Book { Name = "Программирование на C#", Price = 1500.50m };
+        //Задание 3
+        IProduct myBook = new Book { Name = "Программирование на C#", Price = 1500 };
         Console.WriteLine($"Книга: {myBook.Name}, Цена: {myBook.Price} руб.");
 
-        Console.WriteLine("\n--- Задание 5 ---");
+        //Задание 5
         MakeSpeak(new Dog());
         MakeSpeak(new Cat());
 
 
-        Console.WriteLine("\n--- Задание 6 ---");
+        //Задание 6
         IShape[] shapes = { new Circle(5), new Rectangle(4, 6) };
         foreach (var shape in shapes)
         {
             Console.WriteLine($"Площадь фигуры: {shape.GetArea():F2}");
         }
 
-        Console.WriteLine("\n--- Задание 7 ---");
+        //Задание 7
         IWorker[] workers = { new Teacher(), new Programmer() };
         foreach (var worker in workers)
         {
             worker.DoWork();
         }
 
-        Console.WriteLine("\n--- Задание 8 ---");
+        //Задание 8
         Duck donald = new Duck();
         donald.Fly();
         donald.Swim();
 
-        Console.WriteLine("\n--- Задание 9 ---");
+        //Задание 9
         IPrintable[] items = { new Document(), new Photo() };
         foreach (var item in items)
         {

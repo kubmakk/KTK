@@ -45,6 +45,7 @@ namespace PracticalWork7_3
         public static void PrintNumbers(int n)
         {
             if (n < 1) return;
+            
             PrintNumbers(n - 1);
             Console.Write(n + " ");
         }
@@ -52,15 +53,14 @@ namespace PracticalWork7_3
         // 3
         public static int FactorialRecursive(int n)
         {
-            // Базовый случай: факториал 0 и 1 равен 1
             if (n == 0 || n == 1) return 1;
             return n * FactorialRecursive(n - 1);
         }
 
+
         // 4
         public static int SumArrayRecursive(int[] arr, int index = 0)
         {
-            // Если вышли за пределы массива, возвращаем 0
             if (index >= arr.Length) return 0;
             return arr[index] + SumArrayRecursive(arr, index + 1);
         }
@@ -75,9 +75,10 @@ namespace PracticalWork7_3
 
             while (number > 0)
             {
-                count++;
+                count++; 
                 number /= 10;
             }
+            
             return count;
         }
 
