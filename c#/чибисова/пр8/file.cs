@@ -2,41 +2,32 @@ using System;
 
 class Program
 {
-    static void Main()
+    // Задания 8
+    class NegativeNumberException : Exception
     {
-        Task1();
-        Task2();
-        Task3();
-        Console.WriteLine(ReadInt());
-        Task5();
-        Task6();
-        Console.WriteLine(Divide(10, 0));
-        Task8();
-        Task9();
-        Task10();
-        Task11();
-        Task12();
+        public NegativeNumberException(string message) : base(message) { }
     }
 
-    // 1. Квадрат числа
-    static void Task1()
+    static void Main()
     {
+        // --- Задание 1 ---
+        Console.WriteLine("Задание 1");
         Console.Write("Введите число: ");
-        string input = Console.ReadLine();
+        string input1 = Console.ReadLine();
         try
         {
-            int num = int.Parse(input);
+            int num = int.Parse(input1);
             Console.WriteLine($"Квадрат: {num * num}");
         }
         catch (FormatException)
         {
             Console.WriteLine("Бро, это не число. Введи цифры");
         }
-    }
 
-    // 2. Деление и две ошибки
-    static void Task2()
-    {
+        Console.WriteLine();
+
+        // --- Задание 2 ---
+        Console.WriteLine("Задание 2");
         try
         {
             Console.Write("Число 1: ");
@@ -45,56 +36,53 @@ class Program
             int b = int.Parse(Console.ReadLine());
             Console.WriteLine($"Результат: {a / b}");
         }
-        catch (DivideByZeroException) { Console.WriteLine("На ноль делить нелья"); }
+        catch (DivideByZeroException) { Console.WriteLine("На ноль делить нельзя"); }
         catch (FormatException) { Console.WriteLine("Вводи только целые числа"); }
-    }
 
-    // 3. Возраст (throw вручную)
-    static void Task3()
-    {
+        Console.WriteLine();
+
+        // --- Задание 3 ---
+        Console.WriteLine("Задание 3");
         Console.Write("Твой возраст: ");
         try
         {
             int age = int.Parse(Console.ReadLine());
             if (age < 0 || age > 120) throw new Exception("Некорректный возраст");
-            Console.WriteLine("Возраст принят.");
+            Console.WriteLine("Возраст принят");
         }
         catch (Exception ex) { Console.WriteLine(ex.Message); }
-    }
 
-    // 4. Метод ReadInt
-    static int ReadInt()
-    {
-        try
-        {
-            Console.Write("Введите число: ");
-            return int.Parse(Console.ReadLine());
-        }
-        catch { return 0; }
-    }
+        Console.WriteLine();
 
-    // 5. Массив и индекс
-    static void Task5()
-    {
-        int[] nums = { 1, 2, 3, 4, 5 };
+        // --- Задание 4 (Исправлено: вызов метода) ---
+        Console.WriteLine("Задание 4");
+        Console.Write("Введите число (для ReadInt): ");
+        int readIntResult = ReadInt();
+        Console.WriteLine($"Результат ReadInt: {readIntResult}");
+
+        Console.WriteLine();
+
+        // --- Задание 5 ---
+        Console.WriteLine("Задание 5");
+        int[] nums5 = { 1, 2, 3, 4, 5 };
         try
         {
             Console.Write("Какой индекс вывести? ");
             int idx = int.Parse(Console.ReadLine());
-            Console.WriteLine(nums[idx]);
+            Console.WriteLine(nums5[idx]);
         }
         catch (IndexOutOfRangeException) { Console.WriteLine("Нет такого индекса"); }
         catch (FormatException) { Console.WriteLine("Индекс должен быть числом."); }
-    }
 
-    // 6. Длина массива (проверки)
-    static void Task6()
-    {
+        Console.WriteLine();
+
+        // --- Задание 6 ---
+        Console.WriteLine("Задание 6");
         Console.Write("Длина массива: ");
-        string input = Console.ReadLine();
+        string input6 = Console.ReadLine();
         try
         {
-            if (int.TryParse(input, out int length)) throw new FormatException();
+            if (!int.TryParse(input6, out int length)) throw new FormatException();
             if (length < 0) throw new ArgumentException("Длина не может быть отрицательной");
 
             int[] arr = new int[length];
@@ -102,96 +90,135 @@ class Program
         }
         catch (FormatException) { Console.WriteLine("Это не число"); }
         catch (ArgumentException ex) { Console.WriteLine(ex.Message); }
-    }
 
-    // 7. Метод Divide с обработкой внутри
-    static int Divide(int a, int b)
-    {
-        try { return a / b; }
-        catch { return 0; }
-    }
+        Console.WriteLine();
 
-    // 8. Свое исключение
-    class NegativeNumberException : Exception
-    {
-        public NegativeNumberException(string message) : base(message) { }
-    }
+        // --- Задание 7 (Исправлено: вызов метода) ---
+        Console.WriteLine("Задание 7");
+        int divA = 10;
+        int divB = 0;
+        int divideResult = Divide(divA, divB);
+        Console.WriteLine($"Результат Divide({divA}, {divB}): {divideResult}");
 
-    static void Task8()
-    {
+        Console.WriteLine();
+
+        // --- Задание 8 (Исправлено: вызов метода) ---
+        Console.WriteLine("Задание 8");
         try
         {
-            Console.Write("Введите число: ");
-            int n = int.Parse(Console.ReadLine());
-            if (n < 0) throw new NegativeNumberException("Отрицательное Ай-яй-яй.");
+            Console.Write("Введите число для проверки на минус: ");
+            string input8 = Console.ReadLine();
+            int parsedNum = ParseNumber(input8);
+            Console.WriteLine($"Успешно распарсено: {parsedNum}");
         }
         catch (NegativeNumberException ex) { Console.WriteLine(ex.Message); }
-    }
+        catch (FormatException) { Console.WriteLine("Некорректный формат числа"); }
 
-    // 9. Сумма до stop
-    static void Task9()
-    {
-        int sum = 0;
+        Console.WriteLine();
+
+        // --- Задание 9 ---
+        Console.WriteLine("Задание 9");
+        int sum9 = 0;
         while (true)
         {
             Console.Write("Введи число : ");
             string s = Console.ReadLine();
             if (s == "stop") break;
-            try { sum += int.Parse(s); }
-            catch { Console.WriteLine("Ошибка ввода, давай еще раз."); }
+            try { sum9 += int.Parse(s); }
+            catch { Console.WriteLine("Ошибка ввода, давай еще раз"); }
         }
-        Console.WriteLine($"Сумма: {sum}");
-    }
+        Console.WriteLine($"Сумма: {sum9}");
 
-    // 10. Мини-калькулятор
-    static void Task10()
-    {
+        Console.WriteLine();
+
+        // --- Задание 10 ---
+        Console.WriteLine("Задание 10");
         try
         {
-            Console.Write("A: "); double a = double.Parse(Console.ReadLine());
+            Console.Write("A: "); double calcA = double.Parse(Console.ReadLine());
             Console.Write("Оп (+, -, *, /): "); string op = Console.ReadLine();
-            Console.Write("B: "); double b = double.Parse(Console.ReadLine());
+            Console.Write("B: "); double calcB = double.Parse(Console.ReadLine());
 
-            if (op == "/" && b == 0) throw new DivideByZeroException();
+            if (op == "/" && calcB == 0) throw new DivideByZeroException();
 
-            if (op == "+") Console.WriteLine(a + b);
-            else if (op == "-") Console.WriteLine(a - b);
-            else if (op == "*") Console.WriteLine(a * b);
-            else if (op == "/") Console.WriteLine(a / b);
+            if (op == "+") Console.WriteLine(calcA + calcB);
+            else if (op == "-") Console.WriteLine(calcA - calcB);
+            else if (op == "*") Console.WriteLine(calcA * calcB);
+            else if (op == "/") Console.WriteLine(calcA / calcB);
             else Console.WriteLine("Не та операция");
         }
         catch (Exception ex) { Console.WriteLine("Ошибка: " + ex.Message); }
-    }
 
-    // 11. Деление массива на число
-    static void Task11()
-    {
-        int[] arr = { 10, 20, 30 };
+        Console.WriteLine();
+
+        // --- Задание 11 ---
+        Console.WriteLine("Задание 11");
+        int[] arr11 = { 10, 20, 30 };
         try
         {
             Console.Write("Делитель: ");
             int d = int.Parse(Console.ReadLine());
-            foreach (int x in arr) Console.WriteLine(x / d);
+            foreach (int x in arr11) Console.WriteLine(x / d);
         }
         catch (DivideByZeroException) { Console.WriteLine("На ноль нельзя"); }
         catch (FormatException) { Console.WriteLine("Нужно число"); }
-    }
 
-    // 12. Поиск элемента
-    static void Task12()
-    {
+        Console.WriteLine();
+
+        // --- Задание 12 (Исправлено: вызов метода) ---
+        Console.WriteLine("Задание 12");
+        int[] arr12 = { 1, 5, 10 };
         try
         {
-            int[] arr = { 1, 5, 10 };
             Console.Write("Что ищем? ");
             int val = int.Parse(Console.ReadLine());
-            int index = -1;
-            for (int i = 0; i < arr.Length; i++)
-                if (arr[i] == val) index = i;
-
-            if (index == -1) throw new Exception("Элемент не найден");
+            int index = FindElement(arr12, val);
             Console.WriteLine("Индекс: " + index);
         }
         catch (Exception ex) { Console.WriteLine(ex.Message); }
+    }
+
+    // Метод для задания 4
+    static int ReadInt()
+    {
+        try
+        {
+            return int.Parse(Console.ReadLine());
+        }
+        catch
+        {
+            return 0;
+        }
+    }
+
+    // Метод для задания 7
+    static int Divide(int a, int b)
+    {
+        try
+        {
+            return a / b;
+        }
+        catch
+        {
+            return 0;
+        }
+    }
+
+    // Метод для задания 8
+    static int ParseNumber(string input)
+    {
+        int n = int.Parse(input);
+        if (n < 0) throw new NegativeNumberException("Отрицательное Айяйяй");
+        return n;
+    }
+
+    // Метод для задания 12
+    static int FindElement(int[] arr, int value)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] == value) return i;
+        }
+        throw new Exception("Элемент не найден!");
     }
 }
