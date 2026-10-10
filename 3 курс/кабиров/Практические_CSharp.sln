@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая2_СписокЗадач", "Практическая2_СписокЗадач\Практическая2_СписокЗадач.csproj", "{4B3B3D3A-9734-4D07-9B26-7A122BE9CD20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Практическая3_КаталогКниг", "Практическая3_КаталогКниг\Практическая3_КаталогКниг.csproj", "{B8DF3BBF-31D0-4F86-8662-43047AF8B15F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B3B3D3A-9734-4D07-9B26-7A122BE9CD20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B3B3D3A-9734-4D07-9B26-7A122BE9CD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B3B3D3A-9734-4D07-9B26-7A122BE9CD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B3B3D3A-9734-4D07-9B26-7A122BE9CD20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8DF3BBF-31D0-4F86-8662-43047AF8B15F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8DF3BBF-31D0-4F86-8662-43047AF8B15F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8DF3BBF-31D0-4F86-8662-43047AF8B15F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8DF3BBF-31D0-4F86-8662-43047AF8B15F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
